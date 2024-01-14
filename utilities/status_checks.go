@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"os/exec"
+	"strings"
 )
 
 func CheckTPMStatus() bool {
@@ -59,7 +60,7 @@ func checkStatus(command, name string) (string, error) {
 		}
 	} else if name == "Secure Boot" {
 		// output should be "True" or "False"
-		if output == "True" {
+		if strings.Contains(output, "True") {
 			returnString = "Secure Boot is enabled."
 		} else {
 			returnString = "Secure Boot is disabled."
