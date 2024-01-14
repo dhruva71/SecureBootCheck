@@ -17,5 +17,6 @@ func main() {
 
 	// wait for user input to exit
 	var input string
+	println("\n\nPress enter to exit")
 	fmt.Scanln(&input)
 }
